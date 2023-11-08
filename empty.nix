@@ -69,12 +69,13 @@ stdenv.mkDerivation rec {
     echo "EXPORT_TEMPLATE_VERSION: $EXPORT_TEMPLATE_VERSION"
 
     ln -s ${godot_4-export-templates} $HOME/.local/share/godot/export_templates/$EXPORT_TEMPLATE_VERSION
+    ln -s $HOME/.local/share/godot/export_templates/$EXPORT_TEMPLATE_VERSION $HOME/.local/share/godot/export_templates/4.2.beta
 
     mkdir -p $out/bin
 
     # 'command' is required to forward stderr to stdin.
     # 'unbuffer' is required to keep colors in logs.
-    command 2>&1 ${expect}/bin/unbuffer godot4 --path . --headless --export-release "Linux/X11" $out/bin/empty | tee $TMPDIR/godot.logs
+    command 2>&1 ${expect}/bin/unbuffer godot4 --path . --headless --verbose --export-release "Linux/X11" $out/bin/empty | tee $TMPDIR/godot.logs
 
     # Manually check for errors
     [ `grep "ERROR:" $TMPDIR/godot.logs | wc -l` -eq 0 ]

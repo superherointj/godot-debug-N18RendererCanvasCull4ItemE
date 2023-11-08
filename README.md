@@ -1,5 +1,9 @@
 # Godot Debug Demo for: ObjectDB instances / 'N18RendererCanvasCull4ItemE' leaked at exit
 
+Empty Godot 4 project to show `leaked at exit` error on export in Linux.
+
+Notice: `main.tscn` only has a single Node2D. This is a very minimal demo.
+
 ## Error logs
 
 > ERROR: 1 RID allocations of type 'N18RendererCanvasCull4ItemE' were leaked at exit.
@@ -24,3 +28,6 @@ Command executed is at `empty.nix:78`:
 
 I have tested several Godot 4 versions error logs are consistent. Now I'm tracking master because I want to see if something new will fix this.
 
+## Thoughts
+
+Any idea of what is causing this? Thanks!

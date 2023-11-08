@@ -83,32 +83,14 @@ stdenv.mkDerivation rec {
     runHook postBuild
   '';
 
-  # installPhase = ''
-  #   mkdir -p $out/icons/hicolor/48x48/apps/
-  #   cp source/icon.svg $out/icons/hicolor/48x48/apps/
-  # '';
-
   dontFixup = true;
   dontStrip = true;
-  #dontInstall = true
-
-  # desktopItems = [
-  #   (makeDesktopItem {
-  #     name = "Tank";
-  #     exec = "tank";
-  #     icon = "icon.svg";
-  #     comment = meta.description;
-  #     desktopName = "Tank";
-  #     genericName = "Tank";
-  #     categories = [ "Game" ];
-  #   })
-  # ];
+  dontInstall = true;
 
   meta = {
     homepage = "https://github.com/superherointj/godot-tank";
     description = "A Tank game made in Godot 4";
     license = lib.licenses.mit;
     platforms = [ "x86_64-linux" ];
-    #maintainers = [ lib.maintainers.superherointj ];
   };
 }

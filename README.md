@@ -1,4 +1,4 @@
-# Godot Debug Demo for: ObjectDB instances leaked at exit; 'N18RendererCanvasCull4ItemE' were leaked at exit.
+# Godot Debug Demo for: ObjectDB instances / 'N18RendererCanvasCull4ItemE' leaked at exit
 
 ## Error logs
 

@@ -3,10 +3,15 @@
 ## Error logs
 
 > ERROR: 1 RID allocations of type 'N18RendererCanvasCull4ItemE' were leaked at exit.
+>
 > WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+>
 >     at: cleanup (core/object/object.cpp:2207)
+>
 > Leaked instance: Node2D:54696855191221058 - Node name: Node2D
+>
 > Leaked instance: SceneState:-9168677380686810297
+>
 > Hint: Leaked instances typically happen when nodes are removed from the scene tree (with `remove_child()`) but not freed (with `free()` or `queue_free()`).
 
 ## To reproduce

@@ -10,8 +10,8 @@
 , gcc-unwrapped
 , gnused
 , git
-, godot_4_2_beta5
-, godot_4_2_beta5-export-templates
+, godot_4
+, godot_4-export-templates
 , libGLU
 , libX11
 , libXcursor
@@ -35,7 +35,7 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     copyDesktopItems
-    godot_4_2_beta5
+    godot_4
     unzip
   ];
 
@@ -65,11 +65,11 @@ stdenv.mkDerivation rec {
 
     mkdir -p $HOME/.local/share/godot/export_templates
 
-    # export EXPORT_TEMPLATE_VERSION=$(echo "${godot_4_2_beta5.version}" | ${gnused}/bin/sed "s/-stable/.stable/")
+    # export EXPORT_TEMPLATE_VERSION=$(echo "${godot_4.version}" | ${gnused}/bin/sed "s/-stable/.stable/")
     export EXPORT_TEMPLATE_VERSION="4.2.beta5"
     echo "EXPORT_TEMPLATE_VERSION: $EXPORT_TEMPLATE_VERSION"
 
-    ln -s ${godot_4_2_beta5-export-templates} $HOME/.local/share/godot/export_templates/$EXPORT_TEMPLATE_VERSION
+    ln -s ${godot_4-export-templates} $HOME/.local/share/godot/export_templates/$EXPORT_TEMPLATE_VERSION
     ln -s $HOME/.local/share/godot/export_templates/$EXPORT_TEMPLATE_VERSION $HOME/.local/share/godot/export_templates/4.2.beta
 
     mkdir -p $out/bin

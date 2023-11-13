@@ -65,12 +65,12 @@ stdenv.mkDerivation rec {
 
     mkdir -p $HOME/.local/share/godot/export_templates
 
+    # To-Do: version should be inferred automatically
     # export EXPORT_TEMPLATE_VERSION=$(echo "${godot_4.version}" | ${gnused}/bin/sed "s/-stable/.stable/")
-    export EXPORT_TEMPLATE_VERSION="4.2.beta5"
+    export EXPORT_TEMPLATE_VERSION="4.2.beta6"
     echo "EXPORT_TEMPLATE_VERSION: $EXPORT_TEMPLATE_VERSION"
 
     ln -s ${godot_4-export-templates} $HOME/.local/share/godot/export_templates/$EXPORT_TEMPLATE_VERSION
-    ln -s $HOME/.local/share/godot/export_templates/$EXPORT_TEMPLATE_VERSION $HOME/.local/share/godot/export_templates/4.2.beta
 
     mkdir -p $out/bin
 

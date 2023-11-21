@@ -18,9 +18,8 @@
       {
         packages = rec {
           empty = pkgs.callPackage ./empty.nix {
-            # Godot version is pinned to 4.2.beta5
-            godot_4 = pkgs.godot_4_2_beta6;
-            godot_4-export-templates = pkgs.godot_4_2_beta6-export-templates;
+            godot_4 = pkgs.godot_4_latest;
+            godot_4-export-templates = pkgs.godot_4_latest-export-templates;
           };
           default = empty;
         };
